@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['controls']});
+      google.charts.setOnLoadCallback(drawDashboard);
+
+      function drawDashboard() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'RTO REVENUE', 'TORRENT REVENUE'],
+          ['2021',425850 ,75150 ],
+          ['2022', 372618,150300 ],
+          ['2023', 245820, 34005],
+          ['2020',252010 , 45000]
+        ]);
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('dashboard_div'));
+
+        var categoryPicker = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'filter_div',
+          'options': {
+            'filterColumnIndex': 0,
+            'ui': {
+              'labelStacking': 'vertical',
+              'allowTyping': false,
+              'allowMultiple': false
+            }
+          }
+        });
+
+        var chart = new google.visualization.ChartWrapper({
+          'chartType': 'BarChart',
+          'containerId': 'chart_div',
+          'options': {
+            'width': 500,
+            'height': 300,
+            'legend': 'bottom'
+          }
+        });
+
+        dashboard.bind(categoryPicker, chart);
+        dashboard.draw(data);
+      }
+    </script>
+  </head>
+  <body>
+  
+  </body>
+</html>

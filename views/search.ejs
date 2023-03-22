@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                <!-- Bootstrap CSS -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+        
+                <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+
+        <link rel="stylesheet" href="../stylesheets/Other_page.css">
+           
+        <link rel="stylesheet" href="../stylesheets/table.css">
+        <link rel="stylesheet" href="../stylesheets/navbar.css">
+
+        <style>
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+            
+        </style>
+       
+    </head>
+    <body>
+         
+  <header>
+    <div class="head">
+        <img src="../images/final-20.gif" alt="error " >
+        <h1 style="margin-left: 520px;"><b>E-Challan Collection System</b></h1>
+        <!-- <ul> 
+            <li><a href="../Home_Page.html" class="active" href="#"><i class="fa fa-fw fa-home" ></i>Home</a></li>
+            <li>
+                <a  href="../Qurery.html"><i class="fa fa-fw fa-exclamation-circle"></i>Queries</a>
+            </li>
+            <li>
+              <a  href="#"><i class="fa fa-fw fa-plus"></i>Manage</a>
+              <ul>
+                  <li><a href="../newform.html" style="text-decoration: none;">Insert </a></li> 
+                  <li><a href="../unewform.html" style="text-decoration: none;">Update</a></li>
+                  </ul>
+          </li>
+         
+          <li id="temp"><a href="#" style="text-decoration: none;">Services <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <ul>
+                <li><a href="/generated" style="text-decoration: none;font-size: 16px;"><b>Generated</b> </a></li>
+               
+                <li><a href="/integrated" style="text-decoration: none;font-size: 16px;"><b>Mapped</b></a></li>
+               
+                <li><a href="/detain" style="text-decoration: none; font-size: 16px;"><b>Unrecognized Offenders</b></a></li>
+            </ul></li>
+       </ul> -->
+        
+    </div>
+    </header>
+        <br><br><br><br>
+        <table style="width: 90%;">
+            <tr >
+              <th class="a12" style="padding-top:20px ;padding-right: -20px;"><a href="../Home_Page.html" style="text-decoration: none;"><i class="fa fa-fw fa-home" style="font-size: x-large; color: darkblue; margin-left: 10px; display: inline;text-decoration: none;"></i> </a><p style="font-size: large; display: inline;color: darkblue;">/</p>
+                <a href="/integrated" style="font-size: large; color: darkblue; font-family:Arial, Helvetica, sans-serif; text-decoration: none;">Entity Mapped</a> <p style="font-size: large; display: inline; color: darkblue;">/
+                </p> <a href="/manual" style="font-size: large; color: darkblue; font-family:Arial, Helvetica, sans-serif;text-decoration: none; ">Manual Search</a><p style="font-size: large; display: inline; color: darkblue;">/
+                </p> <a href="/detain" style="font-size: large; color: darkblue; font-family:Arial, Helvetica, sans-serif;text-decoration: none; ">Unrecognized Violators</a> </th>
+                <th style=" color: black;  font-size: 45px;width:fit-content;padding-right: 250px">Unrecognized Violators</th>
+            </tr>
+          </table>
+
+          <% if (messages.success) { %>
+            <p class="alert alert-success mt-4" id="flash-message" style="font-size:medium;"><%- messages.success %></p>
+            <script>
+              const flashMessage = document.getElementById("flash-message");
+              setTimeout(() => {
+                flashMessage.style.display = "none";
+              }, 5000);
+            </script>
+        <% } %> 
+
+        <br><br>
+        <table class="tg" style="width: 100%;">
+            <thead>
+              <tr>
+                <th class="tg-nof5">Sr. No.</th>
+                <th class="tg-nof5" name="Challan">Challan No.</th>
+                <th class="tg-nof5">First Name</th>
+                <th class="tg-nof5">Last Name</th>
+                <th class="tg-nof5">Mobile No.</th>
+                <th class="tg-nof5">Vehicle No.</th>
+                <th class="tg-nof5">Address Line-1 </th>
+                <th class="tg-nof5">Address Line-2 </th>
+                <th class="tg-nof5">Pincode </th>
+                <th class="tg-nof5">Amount</th>
+                <th class="tg-nof5">Challan Generated Date </th>
+                <th class="tg-nof5">Service Id </th>
+                
+                <th class="tg-nof5">Integrate </th>
+                <th class="tg-nof5">Detain </th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if(data.length){
+ 
+                    for(var i = 0; i< data.length; i++) {%>  
+                    <tr>
+                      <td class="tg-8d8j"scope="row"><%= (i+1) %></td>
+                      <td class="tg-8d8j"><%= data[i].Challan_No%></td>
+                      <td class="tg-8d8j"><%= data[i].First_name%></td>
+                      <td class="tg-8d8j"><%= data[i].Last_Name%></td>
+                      <td class="tg-0lax"><%= data[i].Mobile_No%></td>
+                      <td class="tg-8d8j"><%= data[i].Vehicle_No%></td>
+                      <td class="tg-0lax"><%= data[i].Address_Line1%></td>
+                      <td class="tg-0lax"><%= data[i].Address_Line2%></td>
+                      <td class="tg-0lax"><%= data[i].Pincode%></td>
+                      <!-- <td class="tg-8d8j"><%= data[i].Rulebreak%></td> -->
+                      <td class="tg-8d8j"><%= data[i].Amount%></td>
+                      <td class="tg-8d8j"><%= data[i].Echallan_generated_date%></td>
+                      <!-- <td class="tg-7zrl"><%= data[i].Status%></td> -->
+                      <!-- <td class="tg-0lax"><%= data[i].Due_Date%></td> -->
+                      <!-- <td class="tg-0lax"><%= data[i].Email%></td> -->
+                        <!-- buttons -->
+                        <form>
+                        <td><input type="number" id="field" required></td></form>              
+                        <td class="abcd"  ><a class="dropdown-item" href="/integrate1/?query=<%= data[i].Challan_No%>"><input type="submit" class="btn" id="submitbutton" value="Integrate" style="background-color: darkblue; color: white;"></a></td>
+                      </td>
+                      <td class="abcd"  ><a class="dropdown-item" href="/detain1/?query=<%= data[i].Challan_No%>"><input type="submit" class="btn"  value="Detain" style="background-color: darkblue; color: white;"></a></td>
+                      </td>
+                      </tr>
+                    <% }
+                             
+                     }else{ %>
+                         <tr>
+                            <td colspan="3">No user</td>
+                         </tr>
+                      <% } %>    
+            </tbody>
+        </table>
+
+        <br><br>
+<h2 style="text-align: center;font-size: x-large;">NOTE : -  "These are the potential matches for the record you searched."</h2>
+<br>    
+
+            <div class="card">
+                <div class="card-header">Torrent Data</div>
+                <div style="display: flex;margin-left: 80vw; margin-top: 10px;">
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        
+                        <table id="customer_data" class="table table-bordered" style="width: 100%;">
+                            <thead>
+                                <tr style="background-color: darkblue; color: white;">
+                                <th >First Name</th>
+                                <th >Last Name</th>
+                                
+                
+                                <th >Address Line-1 </th>
+                                <th >Address Line-2 </th>
+                                <th >Pincode </th> 
+                                <th >Service Id </th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>
+
+<script>
+
+$(document).ready(function(){
+
+    var dataTable = $('#customer_data').DataTable({
+        'processing' : true,
+        'serverSide' : true,
+        'serverMethod' : 'get',
+        'ajax' : {
+            'url' : '/get_data'
+        },
+        'aaSorting' : [],
+        'columns': [
+            { data : 'First_name' },
+            { data : 'Last_Name' },
+         
+            { data : 'Address_Line1' },
+            { data : 'Address_Line2' },
+            { data : 'Pincode' },
+            { data : 'Customerid' }
+        ]
+    });
+
+});
+
+</script>

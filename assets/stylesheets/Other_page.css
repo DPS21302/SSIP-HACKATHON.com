@@ -1,0 +1,46 @@
+/* for header  */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  img{
+    height: 150px;
+     width:150px; 
+   margin-left: -20px;
+   margin-top: -15px;
+  }
+  body {
+    background-color: #E1F3FD;
+  }
+ 
+  h1{
+    margin-top: -120px;
+    margin-left: 300px;
+    margin-bottom: 40px;
+    font-size: 35px;
+    
+  }
+ 
+ .break a{
+    margin-right: 15px;
+    color: blue;
+    font-size: x-large;
+}
+
+.selectedLink{
+    color: red;
+}
+
+.break{
+    text-align: center;
+    margin: 50px 0;
+}
+
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+}
+  /* ends here  */
+   

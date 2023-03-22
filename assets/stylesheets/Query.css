@@ -1,0 +1,195 @@
+.accordion {
+    height: 60px;
+      background-color:skyblue;
+      color: white;
+      cursor: pointer;
+      margin-top: -5px;
+      padding: 18px;
+      margin-left: 350px;
+      width: 50%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 20px;
+      font-weight: bold;
+      transition: 0.4s;
+    }
+    .accordion2 {
+    height: 60px;
+      background-color:white;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      margin-left: 350px;
+      width: 50%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 20px;
+      font-weight: bold;
+      transition: 0.4s;
+    }
+      .active, .accordion:hover {
+          background-color: skyblue;
+          color: black; 
+    }
+        .panel {
+      padding: 0 18px;
+      display: none;
+      width: 50%;
+      margin-left: 350px;
+      /* background-color: white; */
+      overflow: hidden;
+      color: white;
+    }
+    .faq-page:after {
+        content: '\02795';
+        /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: black;
+        float: right;
+        margin-left: 5px;
+        margin-top: -30px
+    }
+    .active:after {
+        content: "\02796";
+        font-size: 13px;
+        color: black;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    p{
+        font-weight: 400;
+        font-size: large;
+        font-family: serif;
+        letter-spacing: 1px;
+        word-spacing: 3px;
+        
+    }
+    div>p{
+        color: black;
+    }
+    .hr-line{
+      width: 50%;
+      margin-left: 350px;
+     
+    }
+    button{
+        padding: 5px;
+        background-color: black;
+        color: white;
+        border: black;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: darkblue;
+    }
+    #mybtn{
+        color: white;
+        background-color: darkblue;
+    }
+    h2{
+        color: black;
+        font-weight: bold;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:xx-large;
+        text-align: center;
+    }
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      color: white;
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid black;
+      width: 30%;
+      height: 500px;
+    }
+    
+    /* The Close Button */
+    .close {
+      color: black;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .dropbtn {
+background-color: white;
+color: black;
+padding: 10px;
+font-size: 20px;
+border: black;
+cursor: pointer;
+
+}
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color:darkblue;
+    transition: .3s linear;
+    box-shadow: 2px 2px 10px rgb(86, 206, 104);
+    overflow: hidden;
+    
+  }
+  
+  
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    color: black;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:white;
+    min-width: 180px;
+    border: 1px solid black;
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 100;
+    font-size: 15px;
+    
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color:rgb(84, 229, 48); }
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+  textarea{
+    width: 100%;
+    height: 100px;
+    color: black;
+  }

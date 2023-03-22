@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href=""
+        <title><%= title %></title>
+    </head>
+    <body>
+         <header>
+        <div class="head">
+            <img src="final-20.gif" alt="error " >
+            <h1><b>E-Challan Collection System</b></h1>
+            <ul> 
+                <li><a href="Home_Page.html" class="active" href="#"><i class="fa fa-fw fa-home" ></i>Home</a></li>
+                <li>
+                    <a  href="#"><i class="fa fa-fw fa-exclamation-circle"></i>Queries</a>
+                </li>
+                <li>
+                  <a  href="#"><i class="fa fa-fw fa-plus"></i>Manage</a>
+                  <ul>
+                      <li><a href="#" style="text-decoration: none;">Insert </a></li> 
+                      <li><a href="#" style="text-decoration: none;">Update</a></li>
+                      </ul>
+              </li>
+             
+                <li id="temp"><a href="#" style="text-decoration: none;">Services &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                  
+                <ul>
+                    <li><a href="E_Challan_Generated.html" style="text-decoration: none;">Generated </a></li>
+                    <li><a href="E_Challan_Fail_To_Integrate.html" style="text-decoration: none;">Manual</a></li>
+                    <li><a href="#" style="text-decoration: none;">Detain</a></li>
+                </ul></li>
+            </ul>
+            
+        </div>
+        </header>
+        <br><br>
+        <div class="container">
+            <h1 class="text-center text-primary mt-3 mb-3">Unidentified Entity Search</h1>
+
+            <div class="card">
+                <div class="card-header">Customer Data</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        
+                        <table id="customer_data" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  </body>
+</html>
+
+<script>
+
+$(document).ready(function(){
+
+    var dataTable = $('#customer_data').DataTable({
+        'processing' : true,
+        'serverSide' : true,
+        'serverMethod' : 'get',
+        'ajax' : {
+            'url' : '/get_data'
+        },
+        'aaSorting' : [],
+        'columns': [
+            { data : 'customer_first_name' },
+            { data : 'customer_last_name' },
+            { data : 'customer_email' },
+            { data : 'customer_gender' }
+        ]
+    });
+
+});
+
+</script>

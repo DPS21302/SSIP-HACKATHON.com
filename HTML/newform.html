@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../stylesheets/Other_page.css">
+    <link rel="stylesheet" href="../stylesheets/table.css">
+    <link rel="stylesheet" href="../stylesheets/navbar.css">
+    <link rel="stylesheet" href="../stylesheets/newform.css">
+</head>
+<header>
+    <div class="head">
+        <img src="../images/final-20.gif" alt="error " >
+        <h1><b>E-Challan Collection System</b></h1>
+        <ul> 
+            <li><a href="Home_Page.html" class="active" href="#"><i class="fa fa-fw fa-home" ></i>Home</a></li>
+            <li>
+                <a  href="Qurery.html"><i class="fa fa-fw fa-exclamation-circle"></i>Queries</a>
+            </li>
+            <li>
+              <a  href="#" style="background-color: darkblue;color: white;"><i class="fa fa-fw fa-plus"></i>Manage</a>
+              <ul>
+                  <li><a href="#" style="text-decoration: none;">Insert </a></li> 
+                  <li><a href="unewform.html" style="text-decoration: none;">Update</a></li>
+                  </ul>
+          </li>
+         
+          <li id="temp"><a href="#" style="text-decoration: none;">Services &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <ul>
+                <li><a href="/generated" style="text-decoration: none;">Generated </a></li>
+               
+                <li><a href="/integrated" style="text-decoration: none;">Integrated</a></li>
+               
+                <li><a href="/detain" style="text-decoration: none;">Unmapped</a></li>
+            </ul></li>
+       </ul>
+        
+    </div>
+    </header>
+
+<body>
+
+        <br><br><br><br><br><br><br>
+    <main>
+       <div class="body1">
+        <div class="container">
+            <div class="header">
+                <h2 style="text-align: center;">INSERT RECORD</h2>
+            </div>
+            <br>
+            <form class="form" id="form" action="/submit" method="post">
+                <div class="column">
+                <div class="form-control">
+                    <label for="Vehicle_No">Vehicle_No</label>
+                    <input type="text" id="V_no" name="V_no" placeholder="Enter Vehicle No" required>
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+                <div class="form-control" >
+                    <label for="Challan_Id" >Challan No</label>
+                    <input type="text" id="C_I" name="C_I" placeholder="Enter Challan No" required >
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+                </div>
+                <div class="column">
+                <div class="form-control">
+                    <label for="F_name">First Name</label>
+                    <input type="text" id="F_name" name="F_name" placeholder="Enter First Name" required>
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+                <div class="form-control">
+                    <label for="L_name">Last Name</label>
+                    <input type="text" id="L_name" name="L_name" placeholder="Enter Last Name" required>
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+
+                <div class="form-control">
+                    <label for="M_N">Mobile No</label>
+                    <input type="number" id="M_N"name="M_N" placeholder="Enter Mobile no" maxlength="10" required>
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+            </div>
+               <div class="column">
+            <div class="form-control">
+                <label for="Hn">Address 1</label>
+                <input type="text" id="Hn" name="Hn" placeholder="Enter Flat No" required>
+                <i class="fa fa-smile-o"></i>
+                <i class="fa fa-frown-o"></i>
+                <p class="errorMessage">Error Message</p>
+            </div>
+            <div class="form-control">
+                <label for="Address">Address 2(Locality)</label>
+                <input type="textarea" id="Ad" name="Ad" placeholder="Enter Address" required>
+                <i class="fa fa-smile-o"></i>
+                <i class="fa fa-frown-o"></i>
+                <p class="errorMessage">Error Message</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="form-control">
+                <label for="C_I_D">Challan Issued date</label>
+                <input type="date" id="C_I_D" name="C_I_D" placeholder="Enter Date" required>
+                <i class="fa fa-smile-o"></i>
+                <i class="fa fa-frown-o"></i>
+                <p class="errorMessage">Error Message</p>
+            </div>
+            <div class="form-control" >
+                <label for="Pc">Pincode</label>
+                <input type="number" id="Pc" name="Pc" placeholder="Enter Pincode" required>
+                <i class="fa fa-smile-o"></i>
+                <i class="fa fa-frown-o"></i>
+                <p class="errorMessage">Error Message</p>
+            </div>
+            </div>
+
+
+        
+               
+                <div class="column">
+                <div class="form-control" style="width: 300px;">
+                    <label for="R_b">Rule Break</label>
+                    <select name="R_b" id="R_b">
+                        <option value="abc">Select Rule break :-</option>
+                        <option value="DWR">drive without registration</option>
+                        <option value="DWSB">Driving without a seat belt</option>
+                        <option value="UPH">Using pressure horn</option>
+                        <option value="DWL">driving without a license</option>
+                        <option value="CTSL">crossing the speed limit</option>
+                        <option value="TOMWD">Talking on mobile while driving</option>
+                        <option value="DWI">driving without insurance</option>
+                        <option value="AOTI">Abuse of traffic inspector</option>
+                        <option value="DWH">driving without a helmet</option>
+                        <option value="DHP">don’t have PUC </option>
+                        <option value="STROTW">Seating three rides on a two-wheeler</option>
+                        <option value="DD">Drunk driving</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="AMOUNT">AMOUNT</label>
+                    <input type="number" id="AMOUNT" name="AMOUNT" placeholder="Enter AMOUNT" required>
+                    <i class="fa fa-smile-o"></i>
+                    <i class="fa fa-frown-o"></i>
+                    <p class="errorMessage">Error Message</p>
+                </div>
+                </div>
+               
+                <button>Submit</button>
+            </form>
+
+            
+
+        </div>
+    </main>
+    <div class="animate-circles">
+        <div class="red circle"></div>
+        <div class="blue circle"></div>
+        <div class="red circle"></div>
+        <div class="circle"></div>
+        <div class="orange circle"></div>
+        <div class="red circle"></div>
+        <div class="circle"></div>
+        <div class="red circle"></div>
+        <div class="blue circle"></div>
+        <div class="orange circle"></div>
+    </div>
+    <!-- <script src="../newform.js"> -->
+
+    </script>
+</div>
+</body>
+
+</html>

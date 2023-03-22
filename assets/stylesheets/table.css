@@ -1,0 +1,146 @@
+.tg  {border-collapse:collapse;border-color:darkblue;border-spacing:0;}
+#temp{
+  content: '\02795';
+}
+
+  .tg td{
+    background-color:#ffffff;
+    border-color:darkblue;
+    border-style:solid;
+    border-width:1px;
+    color:#444;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+
+
+.tg th{background-color:darkblue;
+    border-color:#ffffff;
+    border-style:solid;
+    border-width:1px;
+    color:#fff;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+
+  .tg .tg-nb2d{
+    border-color:inherit;
+    font-size:100%;
+    text-align:center;
+    vertical-align:center
+  }
+
+  .tg .tg-c3ow{border-color:inherit;
+    text-align:center;
+    vertical-align:center
+  }
+
+  .tg .tg-oesp{
+    border-color:inherit;
+    font-size:medium;
+    font-weight:bold;
+    text-align:center;
+    vertical-align:center;
+    border-color: #ffffff;
+  }
+
+  .tg .tg-0pky{
+    border-color:inherit;
+    text-align:left;
+    vertical-align:center
+  }
+
+  .tg .tg-c3ow.btn{
+    background-color: #ffffff;
+     border-color: darkblue;
+     }
+
+  .tg .tg-c3ow button{
+    background-color: darkblue;
+    color: white;
+     border-radius: 5px; 
+     height: 35px;
+      width: 60px;
+       border-color:darkblue;
+
+  }
+  .tg .abcd{
+    background-color: #ffffff;
+     border-color: darkblue;
+     }
+
+  .tg .abcd .btn{
+    background-color: darkblue; 
+    color: white;
+    
+  }
+
+/* Table cod ends here */
+
+  .v123 a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 26px;
+    border-radius: 10%;
+    margin:1%;
+    text-align: center;
+    position: relative;
+    
+  }
+  
+  .v123 a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .v123 .previous {
+    background-color: #0425aa;
+    color: white;
+  }
+  
+  .v123 .next {
+    background-color: #0425aa;
+    color: white;
+  }
+  
+  .v123 .round {
+    border-radius: 50%;
+  }
+  #dropdownMenuButton{
+    background-color: #E1F3FD;
+    color: darkblue;
+     margin-top: 15px;
+     margin-left: -300px; 
+     width: 50px;
+      height: 40px;
+       box-shadow: none;
+       border-color: #E1F3FD;
+  }
+  .dropdown-menu{
+    margin-top: -70px;
+    width: 150px;
+     font-size: large;
+      margin-left: 50px; 
+    line-height: 25px;
+    background-color: white;
+    box-shadow: none;
+  }
+  .dropdown-item:hover{
+    color: #0425aa;
+  }
+  .htg{
+    width:100%;
+  }
+  .hth{
+    color: black;  font-size: 45px; padding-left: 90px;
+  }
+  .hth2{
+    text-decoration: none; font-size:20px;color:darkblue;
+  }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS Pagination</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+  <body>
+    <br />
+    <table class="tg">
+      <thead>
+        <tr>
+          <th class="tg-8d8j" scope="col">SR No</th>
+          <th class="tg-8d8j" scope="col">CHALLAN NO</th>
+          <th class="tg-8d8j" scope="col">NAME</th>
+          <th class="tg-8d8j" scope="col">MOBILE NO</th>
+          <th class="tg-8d8j" scope="col">VEHICLE NO</th>
+          <th class="tg-8d8j" scope="col">RULEBREAK</th>
+          <th class="tg-8d8j" scope="col">AMOUNT</th>
+          <th class="tg-8d8j" scope="col">ECHALLAN GENERATED DATE</th>
+          <th class="tg-7zrl" scope="col">STATUS</th>
+          <th class="tg-0lax" scope="col">DUE DATE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(data.length){ for(var i = 0; i< data.length; i++) {%>
+        <tr>
+          <td class="tg-8d8j" scope="row"><%= (i+1) %></td>
+          <td class="tg-8d8j"><%= data[i].CHALLAN_NO%></td>
+          <td class="tg-8d8j"><%= data[i].NAME%></td>
+          <td class="tg-8d8j"><%= data[i].MOBILE_NO%></td>
+          <td class="tg-8d8j"><%= data[i].VEHICLE_NO%></td>
+          <td class="tg-8d8j"><%= data[i].RULEBREAK%></td>
+          <td class="tg-8d8j"><%= data[i].AMOUNT%></td>
+          <td class="tg-8d8j"><%= data[i].ECHALLAN_GENERATED_DATE%></td>
+          <td class="tg-7zrl"><%= data[i].STATUS%></td>
+          <td class="tg-0lax"><%= data[i].DUE_DATE%></td>
+        </tr>
+        <% } }else{ %>
+        <tr>
+          <td colspan="3">No user</td>
+        </tr>
+        <% } %>
+
+
+        <!-- for pagination-->
+        <div class ="break"></div>
+        <!--Display the links to the pages-->
+        <% if(page > 1) { %> <a href="/?page=<%=page-1%>">Previous</a> <% } %>
+        <!--links-->
+        <% for(let i = iterator; i <= endingLink; i++) { %>
+          <% if(i === page) { %>
+          <a class="selectedLink" href="/?page=<%=i%>"><%=i%></a> 
+          <% continue; %>
+        <% } %>
+          <a href="/?page=<%=i%>"><%=i%></a>
+          <% } %>
+        <!--NEXT button-->    
+        <% if(page < numberOfPages) { %> <a href="/?page=<%=page+1%>">Next</a> <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>

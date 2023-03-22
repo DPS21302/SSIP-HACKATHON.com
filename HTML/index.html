@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>LogIn Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'><link rel="stylesheet" href="../stylesheets/style.css">
+<link rel="stylesheet" href="../stylesheets/form.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div id="container">
+  <img id="logo" src="../images/final-20.gif" style="height: 150px; width: 150px;">
+  <h1>LogIn</h1> 
+
+  <form action="/" method="post">
+    <div class="input-wrapper">
+      <input class="input" name="username" placeholder="username" type="text" required>    
+         
+    </div>
+    <br>
+    <div class="input-wrapper">
+      <input class="input" name="password" placeholder="password" type="password" required>
+    </div>
+
+    <br>
+    <a href="./contact.html">Forgot Password ?</a>
+
+    <button class="btn" name="button"> Login</button>  
+</form>
+</div>
+
+<!-- Forgotten Password Container -->
+<div id="forgotten-container">
+   <h1>Forgotten</h1>
+  <span class="close-btn">
+    <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
+  </span>
+
+  <form>
+    <input type="email" name="email" placeholder="E-mail">
+    <a href="#" class="orange-btn">Get new password</a>
+</form>
+</div>
+
+</body>
+</html>

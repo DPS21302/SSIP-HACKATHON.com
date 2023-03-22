@@ -1,0 +1,54 @@
+/* body{
+    background-image: url('bgtricolor.jpg');
+    background-repeat: no-repeat;
+    background-color: rgb(255, 106, 0);
+} */
+.input-group {
+    position: relative;
+  }
+  
+  .input {
+    border: 3px solid #000;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .user-label {
+    position: absolute;
+    left: 15px;
+    color: #000;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 350ms;
+  }
+  
+  .input:focus,
+  input:valid {
+    outline: none;
+    --angle: 0deg;
+    border-bottom: 3px solid;
+    border-image: conic-gradient(from var(--angle),  rgb(255, 106, 0),  blue,aqua,   green) 1;
+    animation: 3s rotate9234 linear infinite;
+  }
+  
+  @keyframes rotate9234 {
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .input:focus~label,
+  input:valid~label {
+    transform: translateY(235%) scale(1);
+    background-color: #e8e8e8;
+    padding: 0 .2em;
+    color: #2196f3;
+  }

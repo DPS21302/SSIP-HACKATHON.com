@@ -1,0 +1,120 @@
+<!-- Query fired-- SELECT * FROM tableName where Status="Paid" -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DATA DISPLAY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel='stylesheet' href='../stylesheets/navbar.css'>
+<link rel='stylesheet' href='../stylesheets/Other_page.css'>
+<link rel='stylesheet' href='../stylesheets/table.css'>
+</head>
+<body>  
+  <header>
+    <div class="head">
+        <img src="../images/final-20.gif" alt="error " >
+        <h1><b>E-Challan Collection System</b></h1>
+        <ul> 
+            <li><a href="Home_Page.html" class="active" ><i class="fa fa-fw fa-home" ></i>Home</a></li>
+            <li>
+                <a  href="../Qurery.html"><i class="fa fa-fw fa-exclamation-circle"></i>Queries</a>
+            </li>
+            <li>
+              <a  href="#"><i class="fa fa-fw fa-plus"></i>Manage</a>
+              <ul>
+                  <li><a href="../newform.html" style="text-decoration: none;">Insert </a></li> 
+                  <li><a href="../unewform.html" style="text-decoration: none;">Update</a></li>
+                  </ul>
+          </li>
+         
+            <li id="temp"><a href="#" style="text-decoration: none;">Service &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <ul>
+              <li><a href="/generated" style="text-decoration: none;">Generated</a></li>
+              <li><a href="/integrated" style="text-decoration: none;">Mapped</a></li>
+              <li><a href="/detain" style="text-decoration: none;">Unmapped</a></li>
+            </ul></li>
+        </ul>
+        
+    </div>
+    </header>
+    <br>
+    <br><br><br>
+    <table class="htg">
+      <tr >
+        <th class="a12" style="padding-top:20px ;"><a href="../Home_Page.html" style="text-decoration: none;"><i class="fa fa-fw fa-home" style="font-size: x-large; color: darkblue; margin-left: 10px; display: inline;text-decoration: none;"></i> </a><p style="font-size: x-large; display: inline;color: darkblue;">/</p>
+          <a href="/generated" style="font-size: x-large; color: darkblue; font-family:Arial, Helvetica, sans-serif; text-decoration: none;">Generated</a> <p style="font-size: x-large; display: inline; color: darkblue;">/</p> <a href="#" style="font-size: x-large; color: darkblue; font-family:Arial, Helvetica, sans-serif;text-decoration: none; ">Paid</a> </th>
+          <th class="hth" style="padding-right: 150px;">Paid Challans </th>
+         
+          
+        </tr>
+    </table>
+
+    <br>
+    <h2 style="margin-left:30px; margin-top: 20px; font-size: x-large;">NOTE : -  " The following records have been generated and paid before due date"</h2>
+
+<% if (messages.success) { %>
+    <p class="alert alert-success mt-4"><%- messages.success %></p>
+<% } %>  
+<br>
+  <table class="tg" style="width: 100%;text-align: center;">
+<thead>
+  <tr>
+    <th class="tg-8d8j" scope="col">SR No</th>
+    <th class="tg-8d8j"scope="col">CHALLAN NO</th>
+    <th class="tg-8d8j"scope="col">NAME</th>
+    <th class="tg-8d8j"scope="col">MOBILE NO</th>
+    <th class="tg-8d8j"scope="col">VEHICLE NO</th>
+    <th class="tg-8d8j"scope="col">RULEBREAK</th>
+    <th class="tg-8d8j"scope="col">AMOUNT</th>
+    <th class="tg-8d8j"scope="col">ECHALLAN GENERATED DATE</th>
+  </tr>
+</thead>
+<tbody>
+  <% if(data.length){
+ 
+  for(var i = 0; i< data.length; i++) {%>  
+  <tr>
+    <td class="tg-8d8j"scope="row"><%= (i+1) %></td>
+    <td class="tg-8d8j"><%= data[i].Challan_No%></td>
+    <td class="tg-8d8j"><%= data[i].First_name +"  "+ data[i].Last_Name %></td>
+    <td class="tg-8d8j"><%= data[i].Mobile_No%></td>
+    <td class="tg-8d8j"><%= data[i].Vehicle_No%></td>
+    <td class="tg-8d8j"><%= data[i].Rulebreak%></td>
+    <td class="tg-8d8j"><%= data[i].Amount%></td>
+    <td class="tg-8d8j"><%= data[i].Echallan_generated_date%></td>
+    
+    
+  </tr>
+  <% }
+           
+   }else{ %>
+       <tr>
+          <td colspan="3">No user</td>
+       </tr>
+    <% } %>    
+  
+</tbody>
+</table>
+<div class="break">
+  <!--Display the links to the pages-->
+      <!--previous button-->
+      <% if(page > 1) { %> <a href="/generated_paid/?page=<%=page-1%>">Previous</a> <% } %>
+      <!--links-->
+      <% for(let i = iterator; i <= endingLink; i++) { %>
+          <% if(i === page) { %>
+          <a class="selectedLink" href="/generated_paid/?page=<%=i%>"><%=i%></a>
+          <% continue; %>
+      <% } %>
+          <a href="/generated_paid/?page=<%=i%>"><%=i%></a>
+          <% } %>
+      <!--NEXT button-->    
+          <% if(page < numberOfPages) { %> <a href="/generated_paid/?page=<%=page+1%>">Next</a> <% } %>
+  </div>
+</body>
+</html>
