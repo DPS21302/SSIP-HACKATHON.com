@@ -11,6 +11,6 @@ Expected Outcomes                   : Higher collections
 Impact                              : Better traffic law following
 
 
-----------------------------------------------------------------------------Abstract--------------------------------------------------------------------------------------
+----------------------------------------------------------------------------Abstract---------------------------------------------------------------------------
 
 • E-challan pay by an effective way is a web-portal which will help the government in improving the e- challan collection. This system shall provide an alternative way of linking the e-challan issued to a citizen with a fixed cyclic bill that the citizen pays without fail such as their electricity bill.  Linking of e-challan fines with a cyclic bill like electricity bill will restrain the citizens from ignoring it, shall facilitate the fine collection for traffic police department and shall bring in awareness amongst the citizens leading to lesser traffic violations.
